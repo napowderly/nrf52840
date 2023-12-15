@@ -1,17 +1,20 @@
 # My Packaged
 
+## Installation
+Run in the terminal:
+
+```ato install my-package```
+
+Add to your ato project:
+
+```import MyPackage from "mypackage/my-file.ato"```
+
 ## Overview
 
 Tell us what it does!
 
-## Installation
-Run in the terminal:
-ato install my-package
-
-Add to your ato project:
-import MyPackage from "mypackage/my-file.ato"
-
 ## Features
+
 Tell me more!
 
 ## Additional Components
@@ -36,7 +39,7 @@ How do I use it?
 
 ## Contributing
 
-We welcome contributions and suggestions to improve this module. Please submit your contributions as pull requests on our GitHub repository.
+I welcome contributions and suggestions to improve this module. Please submit your contributions as pull requests.
 
 ## License
 
@@ -44,4 +47,4 @@ This package documentation is provided under the [MIT License](#).
 
 ## Contact
 
-For further inquiries or support, please contact us at [email@example.com](mailto:email@example.com).
+For support, please contact me at [email@example.com](mailto:email@example.com).

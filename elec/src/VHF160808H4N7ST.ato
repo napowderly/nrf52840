@@ -1,0 +1,8 @@
+component VHF160808H4N7ST:
+    # component VHF160808H4N7ST
+    footprint = "L0603"
+    lcsc_id = "C1030"
+    # pins
+    signal _2 ~ pin 2
+    signal _1 ~ pin 1
+

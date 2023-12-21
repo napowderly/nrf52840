@@ -23,6 +23,7 @@ module NRF52840Kit:
     # oscilator 32MHz (12pF)
     osc_32MHz = new _X322532MOB4SI
 
+
     # oscilator 32.768kHz (12pF)
     osc_32kHz = new _X322532MOB4SI
 
@@ -31,30 +32,72 @@ module NRF52840Kit:
 
     # decoupling caps - VDD
     bypass_vcc_1 = new Capacitor
+    bypass_vcc_1.footprint = "C0603"
     bypass_vcc_1.power ~ power
     bypass_vcc_1.value = "4.7uF"
+
     bypass_vcc_2 = new Capacitor
+    bypass_vcc_2.footprint = "C0402"
     bypass_vcc_2.power ~ power
     bypass_vcc_2.value = "1uF"
+
     bypass_vcc_3 = new Capacitor
+    bypass_vcc_3.footprint = "C0402"
     bypass_vcc_3.power ~ power
     bypass_vcc_3.value = "100nF"
+
+    bypass_vcc_4 = new Capacitor
+    bypass_vcc_4.footprint = "C0402"
+    bypass_vcc_4.power ~ power
+    bypass_vcc_4.value = "100nF"
+
+    bypass_vcc_5 = new Capacitor
+    bypass_vcc_5.footprint = "C0402"
+    bypass_vcc_5.power ~ power
+    bypass_vcc_5.value = "100nF"
 
     # decoupling caps - DEC pins
     bypass_usb_1 = new Capacitor
     bypass_usb_1.p1 ~ ic.DECUSB; bypass_usb_1.p2 ~ power.gnd
+    bypass_usb_1.footprint = "C0603"
     bypass_usb_1.value = "4.7uF"
 
+    bypass_dec_1 = new Capacitor
+    bypass_dec_1.p1 ~ ic.DEC1; bypass_usb_1.p2 ~ power.gnd
+    bypass_dec_1.footprint = "C0402"
+    bypass_dec_1.value = "1uF"
 
-    # decoupling caps - VBUS
+    bypass_dec_3 = new Capacitor
+    bypass_dec_3.p1 ~ ic.DEC3; bypass_usb_1.p2 ~ power.gnd
+    bypass_dec_3.footprint = "C0603"
+    bypass_dec_3.value = "1uF"
+
+    bypass_dec_4 = new Capacitor
+    bypass_dec_4.p1 ~ ic.DEC4; bypass_usb_1.p2 ~ power.gnd
+    bypass_dec_4.footprint = "C0603"
+    bypass_dec_4.value = "1uF"
+
+    bypass_dec_5 = new Capacitor
+    bypass_dec_5.p1 ~ ic.DEC5; bypass_usb_1.p2 ~ power.gnd
+    bypass_dec_5.footprint = "C0603"
+    bypass_dec_5.value = "1uF"
+
+    bypass_dec_6 = new Capacitor
+    bypass_dec_6.p1 ~ ic.DEC6; bypass_usb_1.p2 ~ power.gnd
+    bypass_dec_6.footprint = "C0603"
+    bypass_dec_6.value = "1uF"
+
     bypass_vbus_1 = new Capacitor
+    bypass_vbus_1.p1 ~ ic.VBUS; bypass_vbus_1.p2 ~ power.gnd
+    bypass_vbus_1.footprint = "C0603"
+    bypass_vbus_1.value = "4.7uF"
 
 
 
 component _ANT016008LCS2442MA2:
     # component ANT016008LCS2442MA2
     footprint = "ANT-SMD_6P-L1.6-W0.8-P1.20"
-    lcsc_id = "C209892"
+    mpn = "C209892"
     # pins
     signal Radiator_electrode ~ pin 1
     signal Dummy_pad ~ pin 2
@@ -67,7 +110,7 @@ component _ANT016008LCS2442MA2:
 component _Q13FC1350000400:
     # component Q13FC1350000400
     footprint = "FC-135R_L3.2-W1.5"
-    lcsc_id = "C32346"
+    mpn = "C32346"
     # pins
     signal _1 ~ pin 1
     signal _2 ~ pin 2
@@ -75,7 +118,7 @@ component _Q13FC1350000400:
 component _X322532MOB4SI:
     # component X322532MOB4SI
     footprint = "CRYSTAL-SMD_4P-L3.2-W2.5-BL"
-    lcsc_id = "C9009"
+    mpn = "C9009"
     # pins
     signal GND ~ pin 4
     GND ~ pin 2
@@ -85,7 +128,7 @@ component _X322532MOB4SI:
 component _NRF52840_QIAA_R:
     # component NRF52840-QIAA-R
     footprint = "AQFN-73_L7.0-W7.0-P0.50-BL-EP4.8"
-    lcsc_id = "C190794"
+    mpn = "C190794"
     # pins
     signal P0_31_AIN7 ~ pin A8
     signal P0_29_AIN5 ~ pin A10

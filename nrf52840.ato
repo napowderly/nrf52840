@@ -29,21 +29,27 @@ module NRF52840Kit:
     # antenna
     antenna = new _ANT016008LCS2442MA2
 
-    # decoupling caps
+    # decoupling caps - VDD
     bypass_vcc_1 = new Capacitor
     bypass_vcc_1.power ~ power
-    bypass_vcc_1.value = "100nF"
+    bypass_vcc_1.value = "4.7uF"
     bypass_vcc_2 = new Capacitor
     bypass_vcc_2.power ~ power
-    bypass_vcc_2.value = "100nF"
+    bypass_vcc_2.value = "1uF"
     bypass_vcc_3 = new Capacitor
     bypass_vcc_3.power ~ power
     bypass_vcc_3.value = "100nF"
 
-
+    # decoupling caps - DEC pins
     bypass_usb_1 = new Capacitor
+    bypass_usb_1.p1 ~ ic.DECUSB; bypass_usb_1.p2 ~ power.gnd
+    bypass_usb_1.value = "4.7uF"
 
+
+    # decoupling caps - VBUS
     bypass_vbus_1 = new Capacitor
+
+
 
 component _ANT016008LCS2442MA2:
     # component ANT016008LCS2442MA2

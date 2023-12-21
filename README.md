@@ -3,19 +3,24 @@
 ## Installation
 Run in the terminal:
 
-```ato install my-package```
+```ato install nrf52840```
 
 Add to your ato project:
 
-```import MyPackage from "mypackage/my-file.ato"```
+```import NRF52840Kit from "nrf52840/nrf52840.ato"```
 
 ## Overview
 
-Tell us what it does!
+Nordic NRF52840 module for all your IOT projects.
 
 ## Features
 
-Tell me more!
+### Wireless! - has a built in 2.4GHz radio
+### SPI
+### USB
+### I2C
+### UART
+### ADC
 
 ## Additional Components
 
@@ -32,10 +37,7 @@ How do I use it?
 
 ## Documentation & Resources
 
-- [Official RP2040 Datasheet](#)
-- [Interface Usage Guidelines](#)
-- [GPIO Programming Examples](#)
-- [Community Forums and Support](#)
+- [Datasheet](#)
 
 ## Contributing
 

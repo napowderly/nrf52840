@@ -20,6 +20,7 @@ module NRF52840Kit:
     # connect interfaces
     ic.VDD ~ power.vcc
     ic.VSS ~ power.gnd
+    ic.VSS_PA ~ power.gnd
     ic.EP ~ power.gnd
 
     # SWD
@@ -65,6 +66,15 @@ module NRF52840Kit:
 
     # antenna
     antenna = new _ANT016008LCS2442MA2
+    ant_inductor = new _VHF160808H4N7ST
+    ant_cap_1 = new Capacitor
+    ant_cap_2 = new Capacitor
+
+    # connect up antenna
+    ic.ANT ~ ant_inductor.1; ant_inductor.2 ~ antenna.Feed_point;
+    ant_inductor.1 ~ ant_cap_1.p1; ant_cap_1.p2 ~ power.gnd
+    ant_inductor.2 ~ ant_cap_2.p1; ant_cap_2.p2 ~ power.gnd
+
 
     # decoupling caps - VDD
     bypass_vcc_1 = new Capacitor

@@ -1,0 +1,108 @@
+import Power from "generics/interfaces.ato"
+import SPI from "generics/interfaces.ato"
+import I2C from "generics/interfaces.ato"
+import UART from "generics/interfaces.ato"
+import USB2 from "generics/interfaces.ato"
+
+module NRF52840:
+    ic = new _NRF52840_QIAA_R
+
+    # interfaces
+    power = new Power
+    spi = new SPI
+    i2c = new I2C
+    uart = new UART
+    usb2 = new USB2
+
+    # connect interfaces
+
+    # oscilator 32MHz
+
+    # oscilator 32.768kHz
+
+    # antenna
+
+    # decoupling caps
+
+
+
+component _NRF52840_QIAA_R:
+    # component NRF52840-QIAA-R
+    footprint = "AQFN-73_L7.0-W7.0-P0.50-BL-EP4.8"
+    lcsc_id = "C190794"
+    # pins
+    signal P0_31_AIN7 ~ pin A8
+    signal P0_29_AIN5 ~ pin A10
+    signal P0_02_AIN0 ~ pin A12
+    signal P1_15 ~ pin A14
+    signal P1_13 ~ pin A16
+    signal DEC2 ~ pin A18
+    signal P1_10 ~ pin A20
+    signal VDD ~ pin A22
+    signal XC2 ~ pin A23
+    VDD ~ pin B1
+    signal DCC ~ pin B3
+    signal DEC4 ~ pin B5
+    signal VSS ~ pin B7
+    signal P0_30_AIN6 ~ pin B9
+    signal P0_28_AIN4 ~ pin B11
+    signal P0_03_AIN1 ~ pin B13
+    signal P1_14 ~ pin B15
+    signal P1_12 ~ pin B17
+    signal P1_11 ~ pin B19
+    signal XC1 ~ pin B24
+    signal DEC1 ~ pin C1
+    signal P0_00_XL1 ~ pin D2
+    signal DEC3 ~ pin D23
+    signal DEC6 ~ pin E24
+    signal P0_01_XL2 ~ pin F2
+    signal VSS_PA ~ pin F23
+    signal P0_26 ~ pin G1
+    signal P0_27 ~ pin H2
+    signal ANT ~ pin H23
+    signal P0_04_AIN2 ~ pin J1
+    signal P0_10_NFC2 ~ pin J24
+    signal P0_05_AIN3 ~ pin K2
+    signal P0_06 ~ pin L1
+    signal P0_09_NFC1 ~ pin L24
+    signal P0_07_TRACECLK ~ pin M2
+    signal P0_08 ~ pin N1
+    signal DEC5 ~ pin N24
+    signal P1_08 ~ pin P2
+    signal P1_07 ~ pin P23
+    signal P1_09_TRACEDATA3 ~ pin R1
+    signal P1_06 ~ pin R24
+    signal P0_11 ~ pin T2
+    signal P1_05 ~ pin T23
+    signal P0_12_TRACEDATA1 ~ pin U1
+    signal P1_04 ~ pin U24
+    signal P1_03 ~ pin V23
+    VDD ~ pin W1
+    signal P1_02 ~ pin W24
+    signal VDDH ~ pin Y2
+    signal P1_01 ~ pin Y23
+    signal SWDCLK ~ pin AA24
+    signal DCCH ~ pin AB2
+    signal DECUSB ~ pin AC5
+    signal P0_14 ~ pin AC9
+    signal P0_16 ~ pin AC11
+    signal P0_18_nRESET ~ pin AC13
+    signal P0_19 ~ pin AC15
+    signal P0_21 ~ pin D2
+    signal P0_23 ~ pin AC19
+    signal P0_25 ~ pin AC21
+    signal SWDIO ~ pin AC24
+    signal VBUS ~ pin AD2
+    signal D_ ~ pin AD4
+    D_ ~ pin B16
+    signal P0_13 ~ pin AD8
+    signal P0_15 ~ pin B17
+    signal P0_17 ~ pin AD12
+    VDD ~ pin AD14
+    signal P0_20 ~ pin AD16
+    signal P0_22 ~ pin AD18
+    signal P0_24 ~ pin AD20
+    signal P1_00_TRACEDATA0 ~ pin AD22
+    VDD ~ pin AD23
+    signal EP ~ pin 0
+

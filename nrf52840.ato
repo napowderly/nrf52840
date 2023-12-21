@@ -3,8 +3,9 @@ import SPI from "generics/interfaces.ato"
 import I2C from "generics/interfaces.ato"
 import UART from "generics/interfaces.ato"
 import USB2 from "generics/interfaces.ato"
+import Capacitor from "generics/capacitors.ato"
 
-module NRF52840:
+module NRF52840Kit:
     ic = new _NRF52840_QIAA_R
 
     # interfaces
@@ -15,16 +16,65 @@ module NRF52840:
     usb2 = new USB2
 
     # connect interfaces
+    ic.VDD ~ power.vcc
+    ic.GND ~ power.gnd
+    ic.VSS ~ power.gnd
 
-    # oscilator 32MHz
+    # oscilator 32MHz (12pF)
+    osc_32MHz = new _X322532MOB4SI
 
-    # oscilator 32.768kHz
+    # oscilator 32.768kHz (12pF)
+    osc_32kHz = new _X322532MOB4SI
 
     # antenna
+    antenna = new _ANT016008LCS2442MA2
 
     # decoupling caps
+    bypass_vcc_1 = new Capacitor
+    bypass_vcc_1.power ~ power
+    bypass_vcc_1.value = "100nF"
+    bypass_vcc_2 = new Capacitor
+    bypass_vcc_2.power ~ power
+    bypass_vcc_2.value = "100nF"
+    bypass_vcc_3 = new Capacitor
+    bypass_vcc_3.power ~ power
+    bypass_vcc_3.value = "100nF"
 
 
+    bypass_usb_1 = new Capacitor
+
+    bypass_vbus_1 = new Capacitor
+
+component _ANT016008LCS2442MA2:
+    # component ANT016008LCS2442MA2
+    footprint = "ANT-SMD_6P-L1.6-W0.8-P1.20"
+    lcsc_id = "C209892"
+    # pins
+    signal Radiator_electrode ~ pin 1
+    signal Dummy_pad ~ pin 2
+    Dummy_pad ~ pin 3
+    signal Feed_point ~ pin 4
+    Dummy_pad ~ pin 5
+    Dummy_pad ~ pin 6
+
+
+component _Q13FC1350000400:
+    # component Q13FC1350000400
+    footprint = "FC-135R_L3.2-W1.5"
+    lcsc_id = "C32346"
+    # pins
+    signal _1 ~ pin 1
+    signal _2 ~ pin 2
+
+component _X322532MOB4SI:
+    # component X322532MOB4SI
+    footprint = "CRYSTAL-SMD_4P-L3.2-W2.5-BL"
+    lcsc_id = "C9009"
+    # pins
+    signal GND ~ pin 4
+    GND ~ pin 2
+    signal OSC1 ~ pin 1
+    signal OSC2 ~ pin 3
 
 component _NRF52840_QIAA_R:
     # component NRF52840-QIAA-R

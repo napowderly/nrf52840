@@ -1,0 +1,10 @@
+component X322532MOB4SI:
+    # component X322532MOB4SI
+    footprint = "CRYSTAL-SMD_4P-L3.2-W2.5-BL"
+    lcsc_id = "C9009"
+    # pins
+    signal GND ~ pin 4
+    GND ~ pin 2
+    signal OSC1 ~ pin 1
+    signal OSC2 ~ pin 3
+

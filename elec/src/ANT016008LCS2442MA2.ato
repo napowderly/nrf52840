@@ -1,0 +1,12 @@
+component ANT016008LCS2442MA2:
+    # component ANT016008LCS2442MA2
+    footprint = "ANT-SMD_6P-L1.6-W0.8-P1.20"
+    lcsc_id = "C209892"
+    # pins
+    signal Radiator_electrode ~ pin 1
+    signal Dummy_pad ~ pin 2
+    Dummy_pad ~ pin 3
+    signal Feed_point ~ pin 4
+    Dummy_pad ~ pin 5
+    Dummy_pad ~ pin 6
+

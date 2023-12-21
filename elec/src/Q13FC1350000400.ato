@@ -1,0 +1,8 @@
+component Q13FC1350000400:
+    # component Q13FC1350000400
+    footprint = "FC-135R_L3.2-W1.5"
+    lcsc_id = "C32346"
+    # pins
+    signal _1 ~ pin 1
+    signal _2 ~ pin 2
+

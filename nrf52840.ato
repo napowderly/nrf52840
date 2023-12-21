@@ -17,8 +17,8 @@ module NRF52840Kit:
 
     # connect interfaces
     ic.VDD ~ power.vcc
-    ic.GND ~ power.gnd
     ic.VSS ~ power.gnd
+    ic.EP ~ power.gnd
 
     # oscilator 32MHz (12pF)
     osc_32MHz = new _X322532MOB4SI

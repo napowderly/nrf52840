@@ -294,8 +294,8 @@ component _NRF52840_QIAA_R:
     signal P0_25 ~ pin AC21
     signal SWDIO ~ pin AC24
     signal VBUS ~ pin AD2
-    signal DP ~ pin AD4
-    signal DM ~ pin B16
+    signal DP ~ pin AD6
+    signal DM ~ pin AD4
     signal P0_13 ~ pin AD8
     signal P0_15 ~ pin B17
     signal P0_17 ~ pin AD12

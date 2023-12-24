@@ -29,7 +29,7 @@ module NRF52840Kit:
     # VBUS connection - series resistor for improved OV protection
     vbus_resistor = new Resistor
     vbus_resistor.footprint = "R0402"
-    vbus_resistor.value = "2R"
+    vbus_resistor.value = 2R +/- 20%
 
 
     power_vbus.vcc ~ vbus_resistor.p1; vbus_resistor.p2 ~ ic.VBUS
@@ -54,8 +54,8 @@ module NRF52840Kit:
     dn_resistor = new Resistor
     dp_resistor.footprint = "R0402"
     dn_resistor.footprint = "R0402"
-    dp_resistor.value = "27R"
-    dn_resistor.value = "27R"
+    dp_resistor.value = 27R +/- 20%
+    dn_resistor.value = 27R +/- 20%
 
     ic.DP ~ dp_resistor.p1; dp_resistor.p2 ~ usb2.dp
     ic.DM ~ dn_resistor.p1; dn_resistor.p2 ~ usb2.dm
@@ -78,8 +78,8 @@ module NRF52840Kit:
 
     osc_32MHz_cap_1.footprint = "C0402"
     osc_32MHz_cap_2.footprint = "C0402"
-    osc_32MHz_cap_1.value = "12pF"
-    osc_32MHz_cap_2.value = "12pF"
+    osc_32MHz_cap_1.value = 12pF +/- 10%
+    osc_32MHz_cap_2.value = 12pF +/- 10%
 
     osc_32MHz_cap_1.p1 ~ osc_32MHz.OSC1; osc_32MHz_cap_1.p2 ~ power.gnd
     osc_32MHz_cap_2.p1 ~ osc_32MHz.OSC2; osc_32MHz_cap_2.p2 ~ power.gnd
@@ -95,8 +95,8 @@ module NRF52840Kit:
 
     osc_32kHz_cap_1.footprint = "C0402"
     osc_32kHz_cap_2.footprint = "C0402"
-    osc_32kHz_cap_1.value = "12pF"
-    osc_32kHz_cap_2.value = "12pF"
+    osc_32kHz_cap_1.value = 12pF +/- 20%
+    osc_32kHz_cap_2.value = 12pF +/- 20%
 
     osc_32kHz_cap_1.p1 ~ osc_32kHz.OSC1; osc_32kHz_cap_1.p2 ~ power.gnd
     osc_32kHz_cap_2.p1 ~ osc_32kHz.OSC2; osc_32kHz_cap_2.p2 ~ power.gnd
@@ -107,10 +107,10 @@ module NRF52840Kit:
     ant_inductor = new _VHF160808H4N7ST
     ant_cap_1 = new Capacitor
     ant_cap_1.footprint = "C0402"
-    ant_cap_1.value = "1pF"
+    ant_cap_1.value = 1pF +/- 20%
     ant_cap_2 = new Capacitor
     ant_cap_2.footprint = "C0402"
-    ant_cap_2.value = "1pF"
+    ant_cap_2.value = 1pF +/- 20%
 
     # connect up antenna
     ic.ANT ~ ant_inductor.1; ant_inductor.2 ~ antenna.feed
@@ -122,64 +122,64 @@ module NRF52840Kit:
     bypass_vcc_1 = new Capacitor
     bypass_vcc_1.footprint = "C0603"
     bypass_vcc_1.power ~ power
-    bypass_vcc_1.value = "4.7uF"
+    bypass_vcc_1.value = 4.7uF +/- 20%
 
     bypass_vcc_2 = new Capacitor
     bypass_vcc_2.footprint = "C0402"
     bypass_vcc_2.power ~ power
-    bypass_vcc_2.value = "1uF"
+    bypass_vcc_2.value = 1uF +/- 20%
 
     bypass_vcc_3 = new Capacitor
     bypass_vcc_3.footprint = "C0402"
     bypass_vcc_3.power ~ power
-    bypass_vcc_3.value = "100nF"
+    bypass_vcc_3.value = 100nF +/- 20%
 
     bypass_vcc_4 = new Capacitor
     bypass_vcc_4.footprint = "C0402"
     bypass_vcc_4.power ~ power
-    bypass_vcc_4.value = "100nF"
+    bypass_vcc_4.value = 100nF +/- 20%
 
     bypass_vcc_5 = new Capacitor
     bypass_vcc_5.footprint = "C0402"
     bypass_vcc_5.power ~ power
-    bypass_vcc_5.value = "100nF"
+    bypass_vcc_5.value = 100nF +/- 20%
 
     # decoupling caps - DEC pins
     bypass_usb_1 = new Capacitor
     bypass_usb_1.p1 ~ ic.DECUSB; bypass_usb_1.p2 ~ power.gnd
     bypass_usb_1.footprint = "C0603"
-    bypass_usb_1.value = "4.7uF"
+    bypass_usb_1.value = 4.7uF +/- 20%
 
     bypass_dec_1 = new Capacitor
     bypass_dec_1.p1 ~ ic.DEC1; bypass_dec_1.p2 ~ power.gnd
     bypass_dec_1.footprint = "C0402"
-    bypass_dec_1.value = "1uF"
+    bypass_dec_1.value = 1uF +/- 20%
 
     bypass_dec_2 = new Capacitor
     bypass_dec_2.p1 ~ ic.DEC2; bypass_dec_2.p2 ~ power.gnd
     bypass_dec_2.footprint = "C0402"
-    bypass_dec_2.value = "1uF"
+    bypass_dec_2.value = 1uF +/- 20%
 
     bypass_dec_3 = new Capacitor
     bypass_dec_3.p1 ~ ic.DEC3; bypass_dec_3.p2 ~ power.gnd
     bypass_dec_3.footprint = "C0603"
-    bypass_dec_3.value = "1uF"
+    bypass_dec_3.value = 1uF +/- 20%
 
     ic.DEC6 ~ ic.DEC4 # not sure, dont worry about it.
     bypass_dec_4 = new Capacitor
     bypass_dec_4.p1 ~ ic.DEC4; bypass_dec_4.p2 ~ power.gnd
     bypass_dec_4.footprint = "C0402"
-    bypass_dec_4.value = "1uF"
+    bypass_dec_4.value = 1uF +/- 20%
 
     bypass_dec_5 = new Capacitor
     bypass_dec_5.p1 ~ ic.DEC5; bypass_dec_5.p2 ~ power.gnd
     bypass_dec_5.footprint = "C0402"
-    bypass_dec_5.value = "1uF"
+    bypass_dec_5.value = 1uF +/- 20%
 
     bypass_vbus_1 = new Capacitor
     bypass_vbus_1.p1 ~ ic.VBUS; bypass_vbus_1.p2 ~ power.gnd
     bypass_vbus_1.footprint = "C0603"
-    bypass_vbus_1.value = "4.7uF"
+    bypass_vbus_1.value = 4.7uF +/- 20%
 
 
 component _InvertedFAntenna:
